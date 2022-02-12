@@ -1,4 +1,5 @@
 ﻿using System;
+using rpg_characters.Helpers;
 
 namespace rpg_characters.Heroes
 {
@@ -21,10 +22,13 @@ namespace rpg_characters.Heroes
         public int CurrentLevel { get; set; }
         //public int CurrentLevel { get => currentLevel; set => currentLevel = value; }
 
-        public Hero(string name)
+        public PrimaryAttributes BasePrimaryAttributes { get; set; }
+
+        public Hero(string name, int strength, int dexterity, int intelligence)
         {
             HeroName = name;
             CurrentLevel = 1;
+            BasePrimaryAttributes = new PrimaryAttributes() { Strength = strength, Dexterity = dexterity, Intelligence = intelligence };
         }
     }
 }
