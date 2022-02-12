@@ -8,16 +8,16 @@ namespace rpg_characters
         static void Main(string[] args)
         {
             Mage mageHero = new Mage("Arttu the Mage");
-            Console.WriteLine($"{mageHero.HeroName}, {mageHero.HeroClass}\n");
+            Console.WriteLine($"{mageHero.HeroName}, {mageHero.HeroClass}, {mageHero.CurrentLevel}\n");
 
             Ranger rangerHero = new Ranger("Arttu the Ranger");
-            Console.WriteLine($"{rangerHero.HeroName}, {rangerHero.HeroClass}\n");
+            Console.WriteLine($"{rangerHero.HeroName}, {rangerHero.HeroClass}, {rangerHero.CurrentLevel}\n");
 
             Rogue rogueHero = new Rogue("Arttu the Rogue");
-            Console.WriteLine($"{rogueHero.HeroName}, {rogueHero.HeroClass}\n");
+            Console.WriteLine($"{rogueHero.HeroName}, {rogueHero.HeroClass}, {rogueHero.CurrentLevel} \n");
 
             Warrior warriorHero = new Warrior("Arttu the Warrior");
-            Console.WriteLine($"{warriorHero.HeroName}, {warriorHero.HeroClass}");
+            Console.WriteLine($"{warriorHero.HeroName}, {warriorHero.HeroClass}, {rogueHero.CurrentLevel}");
         }
     }
 }
