@@ -6,6 +6,7 @@ namespace rpg_characters.Heroes
     {
         public Mage(string name) : base(name)
         {
+            HeroClass = heroClasses.Mage;
         }
     }
 }
