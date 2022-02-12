@@ -1,4 +1,5 @@
 ﻿using System;
+using rpg_characters.Helpers;
 
 namespace rpg_characters.Heroes
 {
@@ -8,5 +9,7 @@ namespace rpg_characters.Heroes
         {
             HeroClass = HeroClasses.Mage;
         }
+
+        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using rpg_characters.Heroes;
+using rpg_characters.Helpers;
 
 namespace rpg_characters
 {
@@ -22,6 +23,7 @@ namespace rpg_characters
             Warrior warriorHero = new("Arttu the Warrior");
             Console.WriteLine($"{warriorHero.HeroName}, {warriorHero.HeroClass}, Level {rogueHero.CurrentLevel}");
             Console.WriteLine($"{warriorHero.BasePrimaryAttributes.Strength}, {warriorHero.BasePrimaryAttributes.Dexterity}, {warriorHero.BasePrimaryAttributes.Intelligence}");
+
         }
     }
 }

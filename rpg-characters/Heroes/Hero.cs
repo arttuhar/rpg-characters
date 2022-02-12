@@ -30,5 +30,8 @@ namespace rpg_characters.Heroes
             CurrentLevel = 1;
             BasePrimaryAttributes = new PrimaryAttributes() { Strength = strength, Dexterity = dexterity, Intelligence = intelligence };
         }
+
+        public abstract void LevelUp();
+
     }
 }
