@@ -6,4 +6,11 @@
     <RootNamespace>rpg_characters</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Game\" />
+    <None Remove="GameClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameClasses\" />
+  </ItemGroup>
 </Project>

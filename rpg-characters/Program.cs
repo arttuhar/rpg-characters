@@ -1,4 +1,5 @@
 ﻿using System;
+using rpg_characters.GameClasses;
 
 namespace rpg_characters
 {
@@ -6,7 +7,9 @@ namespace rpg_characters
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Game newGame = new Game();
+
+            newGame.PlayGame();
         }
     }
 }
