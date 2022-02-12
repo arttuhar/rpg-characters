@@ -1,5 +1,5 @@
 ﻿using System;
-using rpg_characters.GameClasses;
+using rpg_characters.Heroes;
 
 namespace rpg_characters
 {
@@ -7,9 +7,8 @@ namespace rpg_characters
     {
         static void Main(string[] args)
         {
-            Game newGame = new Game();
-
-            newGame.PlayGame();
+            Mage mageHero = new Mage("Arttu the mage");
+            Console.WriteLine(mageHero.heroName);
         }
     }
 }

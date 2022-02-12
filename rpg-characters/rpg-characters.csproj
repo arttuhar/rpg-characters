@@ -8,9 +8,9 @@
 
   <ItemGroup>
     <None Remove="Game\" />
-    <None Remove="GameClasses\" />
+    <None Remove="Heroes\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GameClasses\" />
+    <Folder Include="Heroes\" />
   </ItemGroup>
 </Project>
