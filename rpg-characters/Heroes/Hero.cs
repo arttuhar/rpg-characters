@@ -2,7 +2,7 @@
 
 namespace rpg_characters.Heroes
 {
-    public enum heroClasses
+    public enum HeroClasses
     {
         Mage,
         Ranger,
@@ -15,8 +15,8 @@ namespace rpg_characters.Heroes
         private string heroName;
         public string HeroName { get => heroName; set => heroName = value ; }
 
-        private heroClasses heroClass;
-        public heroClasses HeroClass { get => heroClass; set => heroClass = value; }
+        private HeroClasses heroClass;
+        public HeroClasses HeroClass { get => heroClass; set => heroClass = value; }
 
         public Hero(string name)
         {

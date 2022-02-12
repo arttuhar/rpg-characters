@@ -6,6 +6,7 @@ namespace rpg_characters.Heroes
     {
         public Ranger(string name) : base(name)
         {
+            HeroClass = HeroClasses.Ranger;
         }
     }
 }
