@@ -22,9 +22,19 @@ namespace rpg_characters
 
             Warrior warriorHero = new("Arttu the Warrior");
             Console.WriteLine($"{warriorHero.HeroName}, {warriorHero.HeroClass}, Level {rogueHero.CurrentLevel}");
-            Console.WriteLine($"{warriorHero.BasePrimaryAttributes.Strength}, {warriorHero.BasePrimaryAttributes.Dexterity}, {warriorHero.BasePrimaryAttributes.Intelligence}");
+            Console.WriteLine($"{warriorHero.BasePrimaryAttributes.Strength}, {warriorHero.BasePrimaryAttributes.Dexterity}, {warriorHero.BasePrimaryAttributes.Intelligence}\n");
 
-            
+
+            // Test level up
+            Console.WriteLine("Test level up, y");
+            string askLevelUp = Console.ReadLine();
+
+            if (askLevelUp == "y")
+            {
+                mageHero.LevelUp();
+                Console.WriteLine($"{mageHero.HeroName}, {mageHero.HeroClass}, Level {mageHero.CurrentLevel}");
+                Console.WriteLine($"{mageHero.BasePrimaryAttributes.Strength}, {mageHero.BasePrimaryAttributes.Dexterity}, {mageHero.BasePrimaryAttributes.Intelligence}\n");
+            }
         }
     }
 }
