@@ -38,9 +38,12 @@ namespace rpg_characters.Heroes
 
         public abstract void LevelUp();
 
-        // Test: Get weapon attributes
+        public void EquipItem(ItemSlot itemSlot, Item item)
+        {
+            Equipment.Add(itemSlot, item);
+        }
         
-
-        public abstract void EquipWeapon(ItemSlot itemSlot, Item item);
+        public abstract void EquipWeapon(Weapon weapon);
+        
     }
 }

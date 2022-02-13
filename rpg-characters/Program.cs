@@ -25,7 +25,7 @@ namespace rpg_characters
             Console.WriteLine($"{warriorHero.HeroName}, {warriorHero.HeroClass}, Level {rogueHero.CurrentLevel}");
             Console.WriteLine($"{warriorHero.BasePrimaryAttributes.Strength}, {warriorHero.BasePrimaryAttributes.Dexterity}, {warriorHero.BasePrimaryAttributes.Intelligence}\n");
 
-            Console.WriteLine(mageHero.Equipment);
+            
             // Test level up
             Console.WriteLine("Test level up, y");
             string askLevelUp = Console.ReadLine();
@@ -35,6 +35,24 @@ namespace rpg_characters
                 mageHero.LevelUp();
                 Console.WriteLine($"{mageHero.HeroName}, {mageHero.HeroClass}, Level {mageHero.CurrentLevel}");
                 Console.WriteLine($"{mageHero.BasePrimaryAttributes.Strength}, {mageHero.BasePrimaryAttributes.Dexterity}, {mageHero.BasePrimaryAttributes.Intelligence}\n");
+            }
+
+            // Test equip a weapon
+            Weapon testAxe = new()
+            {
+                ItemName = "Common axe",
+                Slot = ItemSlot.SLOT_WEAPON,
+                WeaponType = WeaponType.WEAPON_AXE,
+                WeaponAttributes = new WeaponAttributes() { Damage = 7, AttackSpeed = 2 }
+            };
+
+            Console.WriteLine("Press y");
+            string testWeapon = Console.ReadLine();
+
+            if(testWeapon == "y")
+            {
+                mageHero.EquipWeapon(testAxe);
+                Console.WriteLine(mageHero.Equipment[0].ItemName);
             }
         }
     }
