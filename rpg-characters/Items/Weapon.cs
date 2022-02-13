@@ -19,12 +19,5 @@ namespace rpg_characters.Items
     {
         public WeaponAttributes WeaponAttributes { get; set; }
         public WeaponType WeaponType { get; set; }
-        
-
-        public Weapon(string name, WeaponAttributes WeaponAttributes, WeaponType WeaponType) : base(name)
-        {
-            this.WeaponAttributes = WeaponAttributes;
-            this.WeaponType = WeaponType;
-        }
     }
 }

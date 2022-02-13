@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using rpg_characters.Helpers;
+using rpg_characters.Items;
 
 namespace rpg_characters.Heroes
 {
@@ -24,14 +26,25 @@ namespace rpg_characters.Heroes
 
         public PrimaryAttributes BasePrimaryAttributes { get; set; }
 
+        public Dictionary<ItemSlot, Item> Equipment { get; set; }
+
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
             HeroName = name;
             CurrentLevel = 1;
             BasePrimaryAttributes = new PrimaryAttributes() { Strength = strength, Dexterity = dexterity, Intelligence = intelligence };
+            Equipment = new Dictionary<ItemSlot, Item>();
         }
 
         public abstract void LevelUp();
 
+        // Test: Get weapon attributes
+        Weapon testWeapon = new Weapon()
+        {
+            ItemName = "Test axe",
+            Slot = ItemSlot.SLOT_WEAPON,
+            WeaponType = WeaponType.WEAPON_AXE,
+            WeaponAttributes = new WeaponAttributes() { Damage = 1, AttackSpeed = 2 }
+        };
     }
 }
