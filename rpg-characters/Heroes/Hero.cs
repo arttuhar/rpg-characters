@@ -39,14 +39,8 @@ namespace rpg_characters.Heroes
         public abstract void LevelUp();
 
         // Test: Get weapon attributes
-        Weapon testWeapon = new Weapon()
-        {
-            ItemName = "Test axe",
-            Slot = ItemSlot.SLOT_WEAPON,
-            WeaponType = WeaponType.WEAPON_AXE,
-            WeaponAttributes = new WeaponAttributes() { Damage = 1, AttackSpeed = 2 }
-        };
+        
 
-        public abstract void EquipWeapon(Weapon currentweapon);
+        public abstract void EquipWeapon(ItemSlot itemSlot, Item item);
     }
 }

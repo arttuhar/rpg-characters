@@ -1,6 +1,7 @@
 ﻿using System;
 using rpg_characters.Heroes;
 using rpg_characters.Helpers;
+using rpg_characters.Items;
 
 namespace rpg_characters
 {
@@ -24,7 +25,7 @@ namespace rpg_characters
             Console.WriteLine($"{warriorHero.HeroName}, {warriorHero.HeroClass}, Level {rogueHero.CurrentLevel}");
             Console.WriteLine($"{warriorHero.BasePrimaryAttributes.Strength}, {warriorHero.BasePrimaryAttributes.Dexterity}, {warriorHero.BasePrimaryAttributes.Intelligence}\n");
 
-
+            Console.WriteLine(mageHero.Equipment);
             // Test level up
             Console.WriteLine("Test level up, y");
             string askLevelUp = Console.ReadLine();

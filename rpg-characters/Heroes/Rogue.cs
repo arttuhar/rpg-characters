@@ -18,9 +18,9 @@ namespace rpg_characters.Heroes
             CurrentLevel++;
         }
 
-        public override void EquipWeapon(Weapon currentWeapon)
+        public override void EquipWeapon(ItemSlot weaponSlot, Item weaponItem)
         {
-            Equipment[currentWeapon.Slot] = currentWeapon;
+            Equipment.Add(weaponSlot, weaponItem);
         }
     }
 }

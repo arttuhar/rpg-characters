@@ -13,14 +13,14 @@ namespace rpg_characters.Heroes
         public override void LevelUp()
         {
             BasePrimaryAttributes.Strength += 1;
-            BasePrimaryAttributes.Dexterity += 1;
-            BasePrimaryAttributes.Intelligence += 5;
+            BasePrimaryAttributes.Dexterity += 5;
+            BasePrimaryAttributes.Intelligence += 1;
             CurrentLevel++;
         }
 
-        public override void EquipWeapon(Weapon currentWeapon)
+        public override void EquipWeapon(ItemSlot weaponSlot, Item weaponItem)
         {
-            Equipment[currentWeapon.Slot] = currentWeapon;
+            Equipment.Add(weaponSlot, weaponItem);
         }
     }
 }
