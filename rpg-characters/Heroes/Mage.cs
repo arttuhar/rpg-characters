@@ -1,4 +1,5 @@
 ﻿using System;
+using rpg_characters.Items;
 
 namespace rpg_characters.Heroes
 {
@@ -15,6 +16,11 @@ namespace rpg_characters.Heroes
             BasePrimaryAttributes.Dexterity += 1;
             BasePrimaryAttributes.Intelligence += 5;
             CurrentLevel++;
+        }
+
+        public override void EquipWeapon(Weapon currentWeapon)
+        {
+            Equipment[currentWeapon.Slot] = currentWeapon;
         }
     }
 }
