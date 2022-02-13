@@ -10,9 +10,11 @@
     <None Remove="Game\" />
     <None Remove="Heroes\" />
     <None Remove="Helpers\" />
+    <None Remove="Items\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Heroes\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Items\" />
   </ItemGroup>
 </Project>
