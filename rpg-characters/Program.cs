@@ -24,6 +24,7 @@ namespace rpg_characters
             Console.WriteLine($"{warriorHero.HeroName}, {warriorHero.HeroClass}, Level {rogueHero.CurrentLevel}");
             Console.WriteLine($"{warriorHero.BasePrimaryAttributes.Strength}, {warriorHero.BasePrimaryAttributes.Dexterity}, {warriorHero.BasePrimaryAttributes.Intelligence}");
 
+            
         }
     }
 }

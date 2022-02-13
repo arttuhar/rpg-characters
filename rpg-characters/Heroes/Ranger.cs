@@ -8,5 +8,13 @@ namespace rpg_characters.Heroes
         {
             HeroClass = HeroClasses.Ranger;
         }
+
+        public override void LevelUp()
+        {
+            BasePrimaryAttributes.Strength += 1;
+            BasePrimaryAttributes.Dexterity += 1;
+            BasePrimaryAttributes.Intelligence += 5;
+            CurrentLevel++;
+        }
     }
 }
