@@ -15,5 +15,6 @@ namespace rpg_characters.Items
     {
         public string ItemName { get; set; }
         public ItemSlot Slot { get; set; }
+        public int ItemLevel { get; set; }
     }
 }

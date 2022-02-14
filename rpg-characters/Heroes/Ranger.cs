@@ -23,7 +23,12 @@ namespace rpg_characters.Heroes
         {
             if (weapon.WeaponType != WeaponType.WEAPON_BOW)
             {
-                throw new InvalidWeaponException("Invalid weapon type!");
+                throw new InvalidWeaponException("Invalid weapon type");
+            }
+
+            if (weapon.ItemLevel > CurrentLevel)
+            {
+                throw new InvalidWeaponException("Invalid hero level");
             }
 
             double weaponBonus = 1 + TotalPrimaryAttributes.Intelligence / 100.00;
@@ -36,7 +41,12 @@ namespace rpg_characters.Heroes
         {
             if (armor.ArmourType != ArmourType.ARMOUR_LEATHER && armor.ArmourType != ArmourType.ARMOUR_MAIL)
             {
-                throw new InvalidArmorException("Invalid armor type!");
+                throw new InvalidArmorException("Invalid armor type");
+            }
+
+            if (armor.ItemLevel > CurrentLevel)
+            {
+                throw new InvalidArmorException("Invalid hero level");
             }
 
             Equipment[armor.Slot] = armor;
