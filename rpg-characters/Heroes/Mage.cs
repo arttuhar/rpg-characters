@@ -21,7 +21,7 @@ namespace rpg_characters.Heroes
 
         public override void EquipWeapon(Weapon weapon)
         {
-            if (weapon.WeaponType != WeaponType.WEAPON_STAFF || weapon.WeaponType != WeaponType.WEAPON_WAND)
+            if (weapon.WeaponType != WeaponType.WEAPON_STAFF && weapon.WeaponType != WeaponType.WEAPON_WAND)
             {
                 throw new InvalidWeaponException("Invalid weapon type!");
             }
@@ -31,6 +31,11 @@ namespace rpg_characters.Heroes
 
         public override void EquipArmor(Armor armor)
         {
+            if (armor.ArmourType != ArmourType.ARMOUR_CLOTH)
+            {
+                throw new InvalidArmorException("Invalid armor type!");
+            }
+
             Equipment[armor.Slot] = armor;
             TotalPrimaryAttributes = BasePrimaryAttributes + ArmorAttributes();
         }

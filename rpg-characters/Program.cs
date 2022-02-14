@@ -42,7 +42,7 @@ namespace rpg_characters
             {
                 ItemName = "Common axe",
                 Slot = ItemSlot.SLOT_WEAPON,
-                WeaponType = WeaponType.WEAPON_AXE,
+                WeaponType = WeaponType.WEAPON_STAFF,
                 WeaponAttributes = new WeaponAttributes() { Damage = 7, AttackSpeed = 2 }
             };
 

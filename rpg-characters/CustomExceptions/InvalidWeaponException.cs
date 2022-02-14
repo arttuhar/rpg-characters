@@ -5,7 +5,6 @@ namespace rpg_characters.CustomExceptions
     {
         public InvalidWeaponException(string message) : base(message)
         {
-
         }
 
         public override string Message => "Invalid weapon";

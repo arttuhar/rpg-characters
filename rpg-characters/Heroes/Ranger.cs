@@ -31,7 +31,13 @@ namespace rpg_characters.Heroes
 
         public override void EquipArmor(Armor armor)
         {
+            if (armor.ArmourType != ArmourType.ARMOUR_LEATHER && armor.ArmourType != ArmourType.ARMOUR_MAIL)
+            {
+                throw new InvalidArmorException("Invalid armor type!");
+            }
+
             Equipment[armor.Slot] = armor;
+            TotalPrimaryAttributes = BasePrimaryAttributes + ArmorAttributes();
         }
     }
 }
