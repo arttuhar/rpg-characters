@@ -61,7 +61,7 @@ namespace rpg_characters
             {
                 mageHero.EquipWeapon(testAxe);
                 Console.WriteLine($"{mageHero.Equipment[ItemSlot.SLOT_WEAPON].ItemName}\n");
-                Console.WriteLine(mageHero.DPS);
+                Console.WriteLine(mageHero.HeroDamage);
             }
 
             Console.WriteLine("Check body slot, y");

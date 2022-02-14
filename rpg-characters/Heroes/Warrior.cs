@@ -26,8 +26,10 @@ namespace rpg_characters.Heroes
                 throw new InvalidWeaponException("Invalid weapon type!");
             }
 
+            double weaponBonus = 1 + TotalPrimaryAttributes.Intelligence / 100.00;
+
             Equipment[weapon.Slot] = weapon;
-            DPS = DamagePerSecond();
+            HeroDamage = DamagePerSecond() * weaponBonus;
         }
 
         public override void EquipArmor(Armor armor)
