@@ -20,6 +20,7 @@ namespace rpg_characters.Heroes
         public int CurrentLevel { get; set; }
         public PrimaryAttributes BasePrimaryAttributes { get; set; }
         public Dictionary<ItemSlot, Item> Equipment { get; set; }
+        public PrimaryAttributes TotalPrimaryAttributes { get; set; }
 
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
@@ -27,6 +28,16 @@ namespace rpg_characters.Heroes
             CurrentLevel = 1;
             BasePrimaryAttributes = new PrimaryAttributes() { Strength = strength, Dexterity = dexterity, Intelligence = intelligence };
             Equipment = new Dictionary<ItemSlot, Item>();
+            CreateSlots();
+            TotalPrimaryAttributes = BasePrimaryAttributes;
+        }
+
+        public void CreateSlots()
+        {
+            Equipment.Add(ItemSlot.SLOT_WEAPON, null);
+            Equipment.Add(ItemSlot.SLOT_HEAD, null);
+            Equipment.Add(ItemSlot.SLOT_BODY, null);
+            Equipment.Add(ItemSlot.SLOT_LEGS, null);
         }
 
         public abstract void LevelUp();
@@ -39,6 +50,29 @@ namespace rpg_characters.Heroes
         public abstract void EquipWeapon(Weapon weapon);
 
         public abstract void EquipArmor(Armor armor);
+
+        public PrimaryAttributes ArmorAttributes()
+        {
+            PrimaryAttributes ArmorPrimaryAttributes = new() { Strength = 0, Dexterity = 0, Intelligence = 0 };
+
+            if (Equipment[ItemSlot.SLOT_HEAD] != null)
+            {
+                ArmorPrimaryAttributes += (Equipment[ItemSlot.SLOT_HEAD] as Armor).ArmourAttributes;
+            }
+
+            if (Equipment[ItemSlot.SLOT_BODY] != null)
+            {
+                ArmorPrimaryAttributes += (Equipment[ItemSlot.SLOT_BODY] as Armor).ArmourAttributes;
+            }
+
+            if (Equipment[ItemSlot.SLOT_LEGS] != null)
+            {
+                ArmorPrimaryAttributes += (Equipment[ItemSlot.SLOT_LEGS] as Armor).ArmourAttributes;
+            }
+
+            return ArmorPrimaryAttributes;
+
+        }
         
     }
 }

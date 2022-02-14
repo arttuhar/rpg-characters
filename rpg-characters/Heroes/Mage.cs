@@ -26,6 +26,7 @@ namespace rpg_characters.Heroes
         public override void EquipArmor(Armor armor)
         {
             Equipment[armor.Slot] = armor;
+            TotalPrimaryAttributes = BasePrimaryAttributes + ArmorAttributes();
         }
     }
 }

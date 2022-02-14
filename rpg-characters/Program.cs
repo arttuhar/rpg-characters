@@ -11,7 +11,7 @@ namespace rpg_characters
         {
             Mage mageHero = new("Arttu the Mage");
             Console.WriteLine($"{mageHero.HeroName}, {mageHero.HeroClass}, Level {mageHero.CurrentLevel}");
-            Console.WriteLine($"{mageHero.BasePrimaryAttributes.Strength}, {mageHero.BasePrimaryAttributes.Dexterity}, {mageHero.BasePrimaryAttributes.Intelligence}\n");
+            Console.WriteLine($"{mageHero.TotalPrimaryAttributes.Strength}, {mageHero.TotalPrimaryAttributes.Dexterity}, {mageHero.TotalPrimaryAttributes.Intelligence}\n");
 
             Ranger rangerHero = new("Arttu the Ranger");
             Console.WriteLine($"{rangerHero.HeroName}, {rangerHero.HeroClass}, Level {rangerHero.CurrentLevel}");
@@ -70,6 +70,7 @@ namespace rpg_characters
             {
                 mageHero.EquipArmor(testPlatebody);
                 Console.WriteLine(mageHero.Equipment[ItemSlot.SLOT_BODY].ItemName);
+                Console.WriteLine($"{mageHero.TotalPrimaryAttributes.Strength}, {mageHero.TotalPrimaryAttributes.Dexterity}, {mageHero.TotalPrimaryAttributes.Intelligence}\n");
             }
         }
     }

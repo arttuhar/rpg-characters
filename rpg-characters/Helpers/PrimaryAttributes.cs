@@ -20,13 +20,13 @@ namespace rpg_characters.Helpers
             return HashCode.Combine(Strength, Dexterity, Intelligence);
         }
 
-        public static PrimaryAttributes operator +(PrimaryAttributes baseLevel, PrimaryAttributes levelUp)
+        public static PrimaryAttributes operator +(PrimaryAttributes first, PrimaryAttributes second)
         {
             return new PrimaryAttributes
             {
-                Strength = baseLevel.Strength + levelUp.Strength,
-                Dexterity = baseLevel.Dexterity + levelUp.Dexterity,
-                Intelligence = baseLevel.Intelligence + levelUp.Intelligence
+                Strength = first.Strength + second.Strength,
+                Dexterity = first.Dexterity + second.Dexterity,
+                Intelligence = first.Intelligence + second.Intelligence
             };
         }
     }

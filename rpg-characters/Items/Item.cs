@@ -8,7 +8,7 @@ namespace rpg_characters.Items
         SLOT_WEAPON,
         SLOT_HEAD,
         SLOT_BODY,
-        ITEM_LEGS
+        SLOT_LEGS
     }
 
     public abstract class Item
