@@ -1,4 +1,5 @@
 ﻿using System;
+using rpg_characters.CustomExceptions;
 using rpg_characters.Items;
 
 namespace rpg_characters.Heroes
@@ -20,6 +21,11 @@ namespace rpg_characters.Heroes
 
         public override void EquipWeapon(Weapon weapon)
         {
+            if (weapon.WeaponType != WeaponType.WEAPON_BOW)
+            {
+                throw new InvalidWeaponException("Invalid weapon type!");
+            }
+
             Equipment[weapon.Slot] = weapon;
         }
 

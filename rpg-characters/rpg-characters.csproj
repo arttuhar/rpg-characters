@@ -11,10 +11,12 @@
     <None Remove="Heroes\" />
     <None Remove="Helpers\" />
     <None Remove="Items\" />
+    <None Remove="CustomExceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Heroes\" />
     <Folder Include="Helpers\" />
     <Folder Include="Items\" />
+    <Folder Include="CustomExceptions\" />
   </ItemGroup>
 </Project>
