@@ -53,6 +53,7 @@ namespace rpg_characters
             {
                 mageHero.EquipWeapon(testAxe);
                 Console.WriteLine(mageHero.Equipment[0].ItemName);
+                Console.WriteLine(mageHero.Equipment[0].Slot);
             }
         }
     }
