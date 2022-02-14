@@ -37,6 +37,8 @@ namespace rpg_characters.Heroes
         }
         
         public abstract void EquipWeapon(Weapon weapon);
+
+        public abstract void EquipArmor(Armor armor);
         
     }
 }

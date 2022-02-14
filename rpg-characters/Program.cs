@@ -37,7 +37,7 @@ namespace rpg_characters
                 Console.WriteLine($"{mageHero.BasePrimaryAttributes.Strength}, {mageHero.BasePrimaryAttributes.Dexterity}, {mageHero.BasePrimaryAttributes.Intelligence}\n");
             }
 
-            // Test equip a weapon
+            // Test equip a weapon and armor
             Weapon testAxe = new()
             {
                 ItemName = "Common axe",
@@ -46,14 +46,30 @@ namespace rpg_characters
                 WeaponAttributes = new WeaponAttributes() { Damage = 7, AttackSpeed = 2 }
             };
 
-            Console.WriteLine("Press y");
+            Armor testPlatebody = new()
+            {
+                ItemName = "Common platebody",
+                Slot = ItemSlot.SLOT_BODY,
+                ArmourType = ArmourType.ARMOUR_PLATE,
+                ArmourAttributes = new PrimaryAttributes() { Strength = 4 }
+            };
+
+            Console.WriteLine("Check weapon slot, y");
             string testWeapon = Console.ReadLine();
 
             if(testWeapon == "y")
             {
                 mageHero.EquipWeapon(testAxe);
-                Console.WriteLine(mageHero.Equipment[0].ItemName);
-                Console.WriteLine(mageHero.Equipment[0].Slot);
+                Console.WriteLine($"{mageHero.Equipment[ItemSlot.SLOT_WEAPON].ItemName}\n");
+            }
+
+            Console.WriteLine("Check body slot, y");
+            string testArmor = Console.ReadLine();
+
+            if (testArmor == "y")
+            {
+                mageHero.EquipArmor(testPlatebody);
+                Console.WriteLine(mageHero.Equipment[ItemSlot.SLOT_BODY].ItemName);
             }
         }
     }
