@@ -50,7 +50,7 @@ namespace rpg_characters
             {
                 ItemName = "Common platebody",
                 Slot = ItemSlot.SLOT_BODY,
-                ArmourType = ArmourType.ARMOUR_PLATE,
+                ArmourType = ArmourType.ARMOUR_CLOTH,
                 ArmourAttributes = new PrimaryAttributes() { Strength = 4 }
             };
 
@@ -61,6 +61,7 @@ namespace rpg_characters
             {
                 mageHero.EquipWeapon(testAxe);
                 Console.WriteLine($"{mageHero.Equipment[ItemSlot.SLOT_WEAPON].ItemName}\n");
+                Console.WriteLine(mageHero.DPS);
             }
 
             Console.WriteLine("Check body slot, y");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using rpg_characters.CustomExceptions;
 using rpg_characters.Helpers;
 using rpg_characters.Items;
 
@@ -21,6 +22,7 @@ namespace rpg_characters.Heroes
         public PrimaryAttributes BasePrimaryAttributes { get; set; }
         public Dictionary<ItemSlot, Item> Equipment { get; set; }
         public PrimaryAttributes TotalPrimaryAttributes { get; set; }
+        public int DPS { get; set; }
 
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
@@ -30,6 +32,7 @@ namespace rpg_characters.Heroes
             Equipment = new Dictionary<ItemSlot, Item>();
             CreateSlots();
             TotalPrimaryAttributes = BasePrimaryAttributes;
+            DPS = DamagePerSecond();
         }
 
         public void CreateSlots()
@@ -72,6 +75,16 @@ namespace rpg_characters.Heroes
 
             return ArmorPrimaryAttributes;
 
+        }
+
+        public int DamagePerSecond()
+        {
+            if (Equipment[ItemSlot.SLOT_WEAPON] != null)
+            {
+                return (Equipment[ItemSlot.SLOT_WEAPON] as Weapon).WeaponAttributes.Damage * (Equipment[ItemSlot.SLOT_WEAPON] as Weapon).WeaponAttributes.AttackSpeed;
+            }
+
+            return 1;
         }
         
     }

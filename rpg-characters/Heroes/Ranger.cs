@@ -27,6 +27,7 @@ namespace rpg_characters.Heroes
             }
 
             Equipment[weapon.Slot] = weapon;
+            DPS = DamagePerSecond();
         }
 
         public override void EquipArmor(Armor armor)
