@@ -20,6 +20,12 @@ namespace rpg_characters.Helpers
             return HashCode.Combine(Strength, Dexterity, Intelligence);
         }
 
+        /// <summary>
+        /// Calculate new value of object by adding two values together
+        /// </summary>
+        /// <param name="first">Value of object</param>
+        /// <param name="second">Value of object</param>
+        /// <returns>New value of object</returns>
         public static PrimaryAttributes operator +(PrimaryAttributes first, PrimaryAttributes second)
         {
             return new PrimaryAttributes

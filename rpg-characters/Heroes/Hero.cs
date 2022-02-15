@@ -23,7 +23,14 @@ namespace rpg_characters.Heroes
         public Dictionary<ItemSlot, Item> Equipment { get; set; }
         public PrimaryAttributes TotalPrimaryAttributes { get; set; }
         public double HeroDamage { get; set; }
-        
+
+        /// <summary>
+        /// Initialize hero
+        /// </summary>
+        /// <param name="name">Name of hero</param>
+        /// <param name="strength">Strength of hero</param>
+        /// <param name="dexterity">Dexterity of hero</param>
+        /// <param name="intelligence">Intelligence of hero</param>
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
             HeroName = name;
@@ -35,6 +42,9 @@ namespace rpg_characters.Heroes
             HeroDamage = DamagePerSecond();
         }
 
+        /// <summary>
+        /// Create item slots, set slots empty
+        /// </summary>
         public void CreateSlots()
         {
             Equipment.Add(ItemSlot.SLOT_WEAPON, null);
@@ -43,17 +53,41 @@ namespace rpg_characters.Heroes
             Equipment.Add(ItemSlot.SLOT_LEGS, null);
         }
 
+        /// <summary>
+        /// Add gained points to base primary attributes, add level
+        /// </summary>
         public abstract void LevelUp();
 
+        /// <summary>
+        /// Add item to dictionary
+        /// </summary>
+        /// <param name="itemSlot">Item slot</param>
+        /// <param name="item">Item</param>
         public void EquipItem(ItemSlot itemSlot, Item item)
         {
             Equipment.Add(itemSlot, item);
         }
-        
+
+        /// <summary>
+        /// Add weapon to weapon slot, calculate weapon bonus
+        /// </summary>
+        /// <param name="weapon">Weapon item</param>
+        /// <returns>Success message</returns>
+        /// <exception cref="InvalidWeaponException">If weapon type or hero level is invalid</exception>
         public abstract string EquipWeapon(Weapon weapon);
 
+        /// <summary>
+        /// Add armor to armor slot, calculate total primary attributes, calculate weapon bonus
+        /// </summary>
+        /// <param name="armor">Armor item</param>
+        /// <returns>Success message</returns>
+        /// <exception cref="InvalidArmorException">If armor type or hero level is invalid</exception>
         public abstract string EquipArmor(Armor armor);
 
+        /// <summary>
+        /// Check if hero has armor equipped, get armour attributes
+        /// </summary>
+        /// <returns>Armor attributes</returns>
         public PrimaryAttributes ArmorAttributes()
         {
             PrimaryAttributes ArmorPrimaryAttributes = new() { Strength = 0, Dexterity = 0, Intelligence = 0 };
@@ -76,6 +110,10 @@ namespace rpg_characters.Heroes
             return ArmorPrimaryAttributes;
         }
 
+        /// <summary>
+        /// Check if hero has weapon equipped, calculate damage per second value
+        /// </summary>
+        /// <returns>DPS if weapon is equipped, else 1</returns>
         public double DamagePerSecond()
         {
             if (Equipment[ItemSlot.SLOT_WEAPON] != null)
@@ -86,6 +124,9 @@ namespace rpg_characters.Heroes
             return 1;
         }
 
+        /// <summary>
+        /// Check hero class, calculate weapon bonus, calculate total damage
+        /// </summary>
         public void SetDamage()
         {
             if (HeroClass == HeroClasses.Mage)
@@ -107,6 +148,9 @@ namespace rpg_characters.Heroes
             }
         }
 
+        /// <summary>
+        /// Print statistics to console
+        /// </summary>
         public void DisplayStats()
         {
             StringBuilder stats = new();

@@ -14,6 +14,9 @@ namespace rpg_characters.Items
         WEAPON_WAND
     }
 
+    /// <summary>
+    /// Initialize weapon item
+    /// </summary>
     public class Weapon : Item
     {
         public WeaponAttributes WeaponAttributes { get; set; }

@@ -11,6 +11,9 @@ namespace rpg_characters.Items
         ARMOUR_PLATE
     }
 
+    /// <summary>
+    /// Initialize armor item
+    /// </summary>
     public class Armor : Item
     {
         public PrimaryAttributes ArmourAttributes { get; set; }
