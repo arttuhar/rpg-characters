@@ -30,8 +30,8 @@ namespace rpg_characters.Heroes
             {
                 throw new InvalidWeaponException("Invalid hero level");
             }
-
-            double weaponBonus = 1 + TotalPrimaryAttributes.Intelligence / 100.00;
+            
+            double weaponBonus = 1 + (TotalPrimaryAttributes.Strength / 100.00);
 
             Equipment[weapon.Slot] = weapon;
             HeroDamage = DamagePerSecond() * weaponBonus;

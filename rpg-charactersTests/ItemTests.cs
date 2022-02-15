@@ -134,11 +134,36 @@ namespace rpg_charactersTests
         }
 
         [Fact]
-        public void Damage_CalculateDamageWithoutWeapon_ReturnDamage()
+        public void Damage_CalculateDamageWithoutWeapon_ReturnCalculatedDamage()
         {
             // Arrange
             Warrior warriorHero = new("Warrior");
             double expected = 1 * (1 + (5 / 100));
+
+            // Act
+            double actual = warriorHero.HeroDamage;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Damage_CalculateDamageWithValidWeapon_ReturnCalculatedDamage()
+        {
+            // Arrange
+            Warrior warriorHero = new("Warrior");
+
+            Weapon testAxe = new()
+            {
+                ItemName = "Common axe",
+                ItemLevel = 1,
+                Slot = ItemSlot.SLOT_WEAPON,
+                WeaponType = WeaponType.WEAPON_AXE,
+                WeaponAttributes = new WeaponAttributes() { Damage = 7, AttackSpeed = 1.1 }
+            };
+
+            warriorHero.EquipWeapon(testAxe);
+            double expected = (7 * 1.1) * (1 + (5 / 100.00));
 
             // Act
             double actual = warriorHero.HeroDamage;
