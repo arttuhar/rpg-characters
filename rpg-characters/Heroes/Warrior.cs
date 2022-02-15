@@ -31,10 +31,11 @@ namespace rpg_characters.Heroes
                 throw new InvalidWeaponException("Invalid hero level");
             }
             
-            double weaponBonus = 1 + (TotalPrimaryAttributes.Strength / 100.00);
+            //double weaponBonus = 1 + (TotalPrimaryAttributes.Strength / 100.00);
 
             Equipment[weapon.Slot] = weapon;
-            HeroDamage = DamagePerSecond() * weaponBonus;
+            SetDamage();
+            //HeroDamage = DamagePerSecond() * weaponBonus;
             return "New weapon equipped!";
         }
 
@@ -52,7 +53,16 @@ namespace rpg_characters.Heroes
 
             Equipment[armor.Slot] = armor;
             TotalPrimaryAttributes = BasePrimaryAttributes + ArmorAttributes();
+            SetDamage();
             return "New armour equipped!";
+        }
+
+        public void SetDamage()
+        {
+            double weaponBonus = 1 + (TotalPrimaryAttributes.Strength / 100.00);
+
+            HeroDamage = DamagePerSecond() * weaponBonus;
+
         }
     }
 }

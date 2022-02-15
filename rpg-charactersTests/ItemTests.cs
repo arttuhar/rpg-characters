@@ -171,5 +171,41 @@ namespace rpg_charactersTests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Damage_CalculateDamageWithValidWeaponAndArmor_ReturnCalculatedDamage()
+        {
+            // Arrange
+            Warrior warriorHero = new("Warrior");
+
+            Weapon testAxe = new()
+            {
+                ItemName = "Common axe",
+                ItemLevel = 1,
+                Slot = ItemSlot.SLOT_WEAPON,
+                WeaponType = WeaponType.WEAPON_AXE,
+                WeaponAttributes = new WeaponAttributes() { Damage = 7, AttackSpeed = 1.1 }
+            };
+
+            Armor testPlatebody = new()
+            {
+                ItemName = "Common platebody",
+                ItemLevel = 1,
+                Slot = ItemSlot.SLOT_BODY,
+                ArmourType = ArmourType.ARMOUR_PLATE,
+                ArmourAttributes = new PrimaryAttributes() { Strength = 1 }
+            };
+
+            warriorHero.EquipArmor(testPlatebody);
+            warriorHero.EquipWeapon(testAxe);
+            
+            double expected = (7 * 1.1) * (1 + ((5 + 1) / 100.00));
+
+            // Act
+            double actual = warriorHero.HeroDamage;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
