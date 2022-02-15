@@ -46,5 +46,24 @@ namespace rpg_charactersTests
             // Act, Assert
             Assert.Throws<InvalidArmorException>(() => warriorHero.EquipArmor(testPlatebody));
         }
+
+        [Fact]
+        public void EquipWeapon_EquipWrongTypeWeapon_ThrowInvalidWeaponException()
+        {
+            // Arrange
+            Warrior warriorHero = new("Warrior");
+
+            Weapon testBow = new()
+            {
+                ItemName = "Common bow",
+                ItemLevel = 1,
+                Slot = ItemSlot.SLOT_WEAPON,
+                WeaponType = WeaponType.WEAPON_BOW,
+                WeaponAttributes = new WeaponAttributes() { Damage = 12, AttackSpeed = 0.8 }
+            };
+
+            // Act, Arrange
+            Assert.Throws<InvalidWeaponException>(() => warriorHero.EquipWeapon(testBow));
+        }
     }
 }
