@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using rpg_characters.CustomExceptions;
 using rpg_characters.Helpers;
 using rpg_characters.Items;
@@ -87,6 +88,19 @@ namespace rpg_characters.Heroes
 
             return 1;
         }
-        
+
+        public void DisplayStats()
+        {
+            StringBuilder stats = new();
+
+            stats.Append($"Hero name: {HeroName}");
+            stats.Append($"Level: {CurrentLevel}\n");
+            stats.Append($"Strength: {TotalPrimaryAttributes.Strength}\n");
+            stats.Append($"Dexterity: {TotalPrimaryAttributes.Dexterity}\n");
+            stats.Append($"Intelligence: {TotalPrimaryAttributes.Intelligence}\n");
+            stats.Append($"Damage: {HeroDamage}\n");
+
+            Console.WriteLine(stats);
+        } 
     }
 }
