@@ -78,11 +78,35 @@ namespace rpg_charactersTests
                 ItemLevel = 1,
                 Slot = ItemSlot.SLOT_HEAD,
                 ArmourType = ArmourType.ARMOUR_CLOTH,
-                ArmourAttributes = new PrimaryAttributes { Intelligence = 5 }
+                ArmourAttributes = new PrimaryAttributes() { Intelligence = 5 }
             };
 
             // Act, Assert
             Assert.Throws<InvalidArmorException>(() => warriorHero.EquipArmor(testClothHead));
+        }
+
+        [Fact]
+        public void EquipWeapon_EquipValidWeapon_ReturnSuccessMessage()
+        {
+            // Arrange
+            Mage mageHero = new("Mage");
+
+            Weapon testStaff = new()
+            {
+                ItemName = "Common staff",
+                ItemLevel = 1,
+                Slot = ItemSlot.SLOT_WEAPON,
+                WeaponType = WeaponType.WEAPON_STAFF,
+                WeaponAttributes = new WeaponAttributes() { Damage = 6, AttackSpeed = 1.2 }
+            };
+
+            string expected = "New weapon equipped!";
+
+            // Act
+            string actual = mageHero.EquipWeapon(testStaff);
+
+            // Assert
+            Assert.Equal(expected, actual);
         }
     }
 }
