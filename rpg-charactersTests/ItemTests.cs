@@ -27,5 +27,24 @@ namespace rpg_charactersTests
             // Act, Assert
             Assert.Throws<InvalidWeaponException>(() => warriorHero.EquipWeapon(testAxe));
         }
+
+        [Fact]
+        public void EquipArmor_EquipWrongLevelArmor_ThrowInvalidArmorException()
+        {
+            // Arrange
+            Warrior warriorHero = new("Warrior");
+
+            Armor testPlatebody = new()
+            {
+                ItemName = "Common platebody",
+                ItemLevel = 2,
+                Slot = ItemSlot.SLOT_BODY,
+                ArmourType = ArmourType.ARMOUR_PLATE,
+                ArmourAttributes = new PrimaryAttributes() { Strength = 1 }
+            };
+
+            // Act, Assert
+            Assert.Throws<InvalidArmorException>(() => warriorHero.EquipArmor(testPlatebody));
+        }
     }
 }
