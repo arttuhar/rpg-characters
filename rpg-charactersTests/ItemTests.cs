@@ -62,8 +62,27 @@ namespace rpg_charactersTests
                 WeaponAttributes = new WeaponAttributes() { Damage = 12, AttackSpeed = 0.8 }
             };
 
-            // Act, Arrange
+            // Act, Assert
             Assert.Throws<InvalidWeaponException>(() => warriorHero.EquipWeapon(testBow));
+        }
+
+        [Fact]
+        public void EquipArmor_EquipWrongTypeArmor_ThrowInvalidArmorException()
+        {
+            // Arrange
+            Warrior warriorHero = new("Warrior");
+
+            Armor testClothHead = new()
+            {
+                ItemName = "Common cloth head armor",
+                ItemLevel = 1,
+                Slot = ItemSlot.SLOT_HEAD,
+                ArmourType = ArmourType.ARMOUR_CLOTH,
+                ArmourAttributes = new PrimaryAttributes { Intelligence = 5 }
+            };
+
+            // Act, Assert
+            Assert.Throws<InvalidArmorException>(() => warriorHero.EquipArmor(testClothHead));
         }
     }
 }
