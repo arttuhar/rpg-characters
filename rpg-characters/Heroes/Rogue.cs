@@ -14,8 +14,8 @@ namespace rpg_characters.Heroes
         public override void LevelUp()
         {
             BasePrimaryAttributes.Strength += 1;
-            BasePrimaryAttributes.Dexterity += 1;
-            BasePrimaryAttributes.Intelligence += 5;
+            BasePrimaryAttributes.Dexterity += 4;
+            BasePrimaryAttributes.Intelligence += 1;
             CurrentLevel++;
         }
 
