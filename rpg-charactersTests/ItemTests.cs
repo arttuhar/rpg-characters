@@ -108,5 +108,29 @@ namespace rpg_charactersTests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void EquipArmor_EquipValidArmor_ReturnSuccessMessage()
+        {
+            // Arrange
+            Rogue rogueHero = new("Rogue");
+
+            Armor testMailBody = new()
+            {
+                ItemName = "Common mail body armor",
+                ItemLevel = 1,
+                Slot = ItemSlot.SLOT_BODY,
+                ArmourType = ArmourType.ARMOUR_MAIL,
+                ArmourAttributes = new PrimaryAttributes() { Strength = 3 }
+            };
+
+            string expected = "New armour equipped!";
+
+            // Act
+            string actual = rogueHero.EquipArmor(testMailBody);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
