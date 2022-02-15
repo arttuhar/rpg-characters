@@ -3,7 +3,6 @@ using rpg_characters.Helpers;
 
 namespace rpg_characters.Items
 {
-
     public enum WeaponType
     {
         WEAPON_AXE,

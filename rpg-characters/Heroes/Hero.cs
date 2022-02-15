@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using rpg_characters.CustomExceptions;
 using rpg_characters.Helpers;
 using rpg_characters.Items;
 
@@ -25,7 +24,6 @@ namespace rpg_characters.Heroes
         public PrimaryAttributes TotalPrimaryAttributes { get; set; }
         public double HeroDamage { get; set; }
         
-
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
             HeroName = name;
@@ -76,7 +74,6 @@ namespace rpg_characters.Heroes
             }
 
             return ArmorPrimaryAttributes;
-
         }
 
         public double DamagePerSecond()
@@ -93,7 +90,7 @@ namespace rpg_characters.Heroes
         {
             StringBuilder stats = new();
 
-            stats.Append($"Hero name: {HeroName}");
+            stats.Append($"Hero name: {HeroName}\n");
             stats.Append($"Level: {CurrentLevel}\n");
             stats.Append($"Strength: {TotalPrimaryAttributes.Strength}\n");
             stats.Append($"Dexterity: {TotalPrimaryAttributes.Dexterity}\n");

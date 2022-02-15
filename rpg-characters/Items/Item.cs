@@ -2,7 +2,6 @@
 
 namespace rpg_characters.Items
 {
-
     public enum ItemSlot
     {
         SLOT_WEAPON,

@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace rpg_characters.CustomExceptions
 {
     public class InvalidArmorException : Exception
