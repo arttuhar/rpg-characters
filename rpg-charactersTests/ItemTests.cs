@@ -132,5 +132,19 @@ namespace rpg_charactersTests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Damage_CalculateDamageWithoutWeapon_ReturnDamage()
+        {
+            // Arrange
+            Warrior warriorHero = new("Warrior");
+            double expected = 1 * (1 + (5 / 100));
+
+            // Act
+            double actual = warriorHero.HeroDamage;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
