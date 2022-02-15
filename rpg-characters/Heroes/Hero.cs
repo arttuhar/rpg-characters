@@ -86,6 +86,27 @@ namespace rpg_characters.Heroes
             return 1;
         }
 
+        public void SetDamage()
+        {
+            if (HeroClass == HeroClasses.Mage)
+            {
+                double weaponBonus = 1 + (TotalPrimaryAttributes.Intelligence / 100.00);
+                HeroDamage = DamagePerSecond() * weaponBonus;
+            }
+
+            if (HeroClass == HeroClasses.Ranger || HeroClass == HeroClasses.Rogue)
+            {
+                double weaponBonus = 1 + (TotalPrimaryAttributes.Dexterity / 100.00);
+                HeroDamage = DamagePerSecond() * weaponBonus;
+            }
+
+            if (HeroClass == HeroClasses.Warrior)
+            {
+                double weaponBonus = 1 + (TotalPrimaryAttributes.Strength / 100.00);
+                HeroDamage = DamagePerSecond() * weaponBonus;
+            }
+        }
+
         public void DisplayStats()
         {
             StringBuilder stats = new();
