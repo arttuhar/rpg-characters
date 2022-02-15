@@ -50,9 +50,9 @@ namespace rpg_characters.Heroes
             Equipment.Add(itemSlot, item);
         }
         
-        public abstract void EquipWeapon(Weapon weapon);
+        public abstract string EquipWeapon(Weapon weapon);
 
-        public abstract void EquipArmor(Armor armor);
+        public abstract string EquipArmor(Armor armor);
 
         public PrimaryAttributes ArmorAttributes()
         {

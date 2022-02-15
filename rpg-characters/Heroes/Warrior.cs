@@ -19,7 +19,7 @@ namespace rpg_characters.Heroes
             CurrentLevel++;
         }
 
-        public override void EquipWeapon(Weapon weapon)
+        public override string EquipWeapon(Weapon weapon)
         {
             if (weapon.WeaponType != WeaponType.WEAPON_AXE && weapon.WeaponType != WeaponType.WEAPON_HAMMER && weapon.WeaponType != WeaponType.WEAPON_SWORD)
             {
@@ -35,9 +35,10 @@ namespace rpg_characters.Heroes
 
             Equipment[weapon.Slot] = weapon;
             HeroDamage = DamagePerSecond() * weaponBonus;
+            return "New weapon equipped!";
         }
 
-        public override void EquipArmor(Armor armor)
+        public override string EquipArmor(Armor armor)
         {
             if (armor.ArmourType != ArmourType.ARMOUR_MAIL && armor.ArmourType != ArmourType.ARMOUR_PLATE)
             {
@@ -51,6 +52,7 @@ namespace rpg_characters.Heroes
 
             Equipment[armor.Slot] = armor;
             TotalPrimaryAttributes = BasePrimaryAttributes + ArmorAttributes();
+            return "New armour equipped!";
         }
     }
 }
