@@ -3,126 +3,123 @@
 ## Table of Contents
 
 - [General Information](#general-information)
-  - [Equipment](#equipment)
-  - [Heroes](#heroes)
-  - [Weapons](#weapons)
-  - [Armour](#armour)
 - [Technologies](#technologies)
+- [Installation and Usage](#installation-and-usage)
 - [Maintainers](#maintainers)
 
 ## General Information
 
-#### Heroes
+Idea of project is to imitate creation of RPG character. Currently project has four different hero classes where to choose:
 
-User can select character class at the beginning. Character always begins from level 1 and every time character levels up, they gain additional points to their abilities. Each class has different strengths and weaknesses and more detailed breakdown of character abilities can be found from tables below.
+- Mage
+- Ranger
+- Rogue
+- Warrior
+
+Heroes in the game have three different primary attributes: strength, dexterity and intelligence. Primary attribute points are set differently between each class. As hero levels up their primary attributes increases as well. Primary attributes at level 1 and gained attributes after level up can be found tables below:
 
 __Mage__
 
-Mages will deal increased damage for every point of *Intelligence*. Each point of *Intelligence* increases Mages damage by 1%.
-
 At level 1:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-1 | 1 | 8
+Strength = 1, Dexterity = 1, Intelligence = 8
 
-At level up:
+Level up:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-1 | 1 | 5
+Strenght = 1, Dexterity = 1, Intelligence = 5
+
+Each point of Intelligence increases Mage class damage by 1%.
 
 __Ranger__
 
-Rangers will deal increased damage for every point of *Dexterity*. Each point of *Dexterity* increases Rangers damage by 1%.
-
 At level 1:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-1 | 7 | 1
+Strength = 1, Dexterity = 7, Intelligence = 1
 
-At level up:
+Level up:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-1 | 5 | 1
+Strenght = 1, Dexterity = 5, Intelligence = 1
+
+Each point of Dexterity increases Ranger class damage by 1%.
 
 __Rogue__
 
-Rogues will deal increased damage for every point of *Dexterity*. Each point of *Dexterity* increases Rogues damage by 1%.
-
 At level 1:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-2 | 6 | 1
+Strength = 2, Dexterity = 6, Intelligence = 1
 
-At level up:
+Level up:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-1 | 4 | 1
+Strenght = 1, Dexterity = 4, Intelligence = 1
+
+Each point of Dexterity increases Rogue class damage by 1%.
 
 __Warrior__
 
-Warriors will deal increased damage for every point of *Strength*. Each point of *Strength* increases Warriors damage by 1%.
-
 At level 1:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-5 | 2 | 1
+Strength = 5, Dexterity = 2, Intelligence = 1
 
-At level up:
+Level up:
 
-Strength | Dexterity | Intelligence
-:---: | :---: | :---:
-3 | 2 | 1
+Strenght = 3, Dexterity = 2, Intelligence = 1
 
+Each point of Strength increases Warrior class damage by 1%.
 
-### Equipment
+Game also contains several different items which can boost heroes attributes and therefore possible damage hero can deal. First of all hero can equip weapon which has two different attributes Damage and Attack speed. With these attributes Damage per second can be calculated (Damage * Attackspeed = Damage per second). By equipping an armor, previously introduced primary attributes will increase. Also certain items can be equipped to certain item slots.
 
-There are several different items which exists. Character can equip items to increase stats. Full list of available slots is found below:
+Weapon types (possible to equip on SLOT_WEAPON):
 
-* __Head__ - Armour
+- Axe
+- Bow
+- Dagger
+- Hammer
+- Staff
+- Sword
+- Wand
 
-* __Body__ - Armour
+Armor types (possible to equip on SLOT_HEAD, SLOT_BODY, SLOT_LEGS):
 
-* __Legs__ - Armour
+- Cloth
+- Leather
+- Mail
+- Plate
 
-* __Hand__ - Weapon
+Only certain hero class can equip certain weapon types and armor types. If hero trying to equip weapon which is meant for different class, Invalid weapon exception will be thrown. Also if hero trying to equip armor whis is meant for different class, Invalid armor exception will be thrown. 
 
+__Mage__
 
-### Weapons
+Weapon types = Staff, Wand
 
-Character can equip weaponry to increase damage and attack speed. Weapons are possible to equip on the Hand slot. The weapons DPS can be calculated by multiplying damage and attack speed together:
+Armor types = Cloth
 
-__Damage * Attack speed = DPS__
+__Ranger__
 
+Weapon types = Bow
 
-Certain character classes can equip only certain weapons. If character tries to equip weapon which is meant for different class, invalid weapon message will be shown:
+Armor types = Leather, Mail
 
-* __Mage__ - Staff, Wand
+__Rogue__
 
-* __Ranger__ - Bow
+Weapon types = Dagger, Sword
 
-* __Rogue__ - Dagger, Sword
+Armor types = Leather, Mail
 
-* __Warrior__ - Axe, Hammer, Sword
+__Warrior__
 
+Weapon types = Axe, Hammer, Sword
 
-### Armour
+Armor types = Mail, Plate
 
-Like weapons, certain classes can equip only certain armour. If character tries to equip armour which is meant for different class, invalid armour message will be shown:
+Every hero has base primary attributes at beginning. After equipping armor, total primary attributs can be calculated by adding base primary attributes and armor attributes together. Total primary attributes will be used to calculate possible damage hero can deal:
 
-* __Mage__ - Cloth
+Total primary attributes:
 
-* __Ranger__ - Leather, Mail
+total primary attributes = base primary attributes + armor attributes
 
-* __Rogue__ - Leather, Mail,
+Damage:
 
-* __Warrior__ - Mail, Plate
+damage = damage per second * (1 + total primary attribute / 100)
 
 
 ## Technologies
@@ -130,6 +127,32 @@ Like weapons, certain classes can equip only certain armour. If character tries 
 The project is implemented with using following technologies:
 
 - C#
+- .NET 5.0
+- xUNit
+
+## Installation and Usage
+
+__NOTE:__ You will need *Visual Studio* to run application or tests.
+
+1. Clone down this repository
+```sh
+ddddd
+```
+
+2. Open project with Visual studio
+
+To run application:
+
+1. Click *Play* button from top bar
+
+To run tests:
+
+1. Navigate to *rpg-charactersTests* folder
+
+2. Open *HeroTests.cs* or *ItemTests.cs* file
+
+3. Right click method name and select option *Run Test(s)*
+
 
 ## Maintainers
 
