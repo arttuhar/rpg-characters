@@ -12,7 +12,7 @@ namespace rpg_characters.Heroes
         /// <param name="name">Name of hero</param>
         public Mage(string name) : base(name, 1, 1, 8)
         {
-            HeroClass = HeroClasses.Mage;
+            HeroClass = HeroClasses.CLASS_MAGE;
         }
 
         /// <summary>

@@ -8,10 +8,10 @@ namespace rpg_characters.Heroes
 {
     public enum HeroClasses
     {
-        Mage,
-        Ranger,
-        Rogue,
-        Warrior
+        CLASS_MAGE,
+        CLASS_RANGER,
+        CLASS_ROGUE,
+        CLASS_WARRIOR
     }
 
     public abstract class Hero
@@ -129,19 +129,19 @@ namespace rpg_characters.Heroes
         /// </summary>
         public void SetDamage()
         {
-            if (HeroClass == HeroClasses.Mage)
+            if (HeroClass == HeroClasses.CLASS_MAGE)
             {
                 double weaponBonus = 1 + (TotalPrimaryAttributes.Intelligence / 100.00);
                 HeroDamage = DamagePerSecond() * weaponBonus;
             }
 
-            if (HeroClass == HeroClasses.Ranger || HeroClass == HeroClasses.Rogue)
+            if (HeroClass == HeroClasses.CLASS_RANGER || HeroClass == HeroClasses.CLASS_ROGUE)
             {
                 double weaponBonus = 1 + (TotalPrimaryAttributes.Dexterity / 100.00);
                 HeroDamage = DamagePerSecond() * weaponBonus;
             }
 
-            if (HeroClass == HeroClasses.Warrior)
+            if (HeroClass == HeroClasses.CLASS_WARRIOR)
             {
                 double weaponBonus = 1 + (TotalPrimaryAttributes.Strength / 100.00);
                 HeroDamage = DamagePerSecond() * weaponBonus;

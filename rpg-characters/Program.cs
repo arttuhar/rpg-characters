@@ -7,7 +7,7 @@ namespace rpg_characters
     {
         static void Main(string[] args)
         {
-            Mage mageHero = new("Arttu the Mage");
+            Mage mageHero = new("Mage");
             mageHero.DisplayStats();
         }
     }
