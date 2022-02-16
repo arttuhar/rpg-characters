@@ -136,7 +136,7 @@ __NOTE:__ You will need *Visual Studio* to run application or tests.
 
 1. Clone down this repository
 ```sh
-ddddd
+git clone https://github.com/arttuhar/rpg-characters.git
 ```
 
 2. Open project with Visual studio
