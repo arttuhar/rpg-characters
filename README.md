@@ -1,5 +1,7 @@
 # rpg-characters
 
+![GitHub repo size](https://img.shields.io/github/repo-size/arttuhar/rpg-characters)
+
 ## Table of Contents
 
 - [General Information](#general-information)
